@@ -1,0 +1,56 @@
+.phoenix-form-group {
+  padding: 20px 10px;
+}
+.phoenix-form-group:not(:last-child) {
+  border-bottom: 1px solid #E2E2E2;
+}
+.phoenix-form-group label {
+  width: 100%;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.phoenix-form-group.multiselect{
+
+}
+.phoenix-form-group.multiselect .items {
+  margin: 0 -10px;
+}
+.phoenix-form-group.multiselect .items:after {
+  content: " ";
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 0;
+}
+.phoenix-form-group.multiselect .item{
+  width: 140px;
+  height: 70px;
+  background-color: #FDFDFD;
+  border: 1px solid #F2F2F2;
+  margin: 0 10px;
+  float: left;
+  transition: box-shadow 30ms;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: table;
+}
+body.rtl .phoenix-form-group.multiselect .item {
+  float: right;
+}
+.phoenix-form-group.multiselect .item .label{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #6F6F6F;
+}
+.phoenix-form-group.multiselect .item.checked{
+  box-shadow: inset 0 0 0 2px #89DAB8;
+  border-color: #89DAB8;
+}
+.phoenix-form-group.multiselect .item input{
+  display: none;
+}

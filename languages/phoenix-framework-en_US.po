@@ -1,0 +1,256 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Phoenix Framework v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-12-13 05:14:53+0000\n"
+"Last-Translator: admin <vahid-mohamadi@live.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: admin/class-phoenix-framework-admin-table.php:52
+#@ default
+msgid "No item."
+msgstr ""
+
+#: admin/class-phoenix-framework-admin-table.php:117
+#@ default
+msgid "search"
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:79
+#, php-format
+#@ phoenix-framework
+msgid "The %s field is required."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:80
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a valid username."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:81
+#@ phoenix-framework
+msgid "Username already exists. Please choose another one."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:82
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must have a value."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:83
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a valid email address."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:84
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain all valid email addresses."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:85
+#@ phoenix-framework
+msgid "Email address already exists. Please choose another one."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:86
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a valid URL."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:87
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a valid IP."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:88
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must be at least %s characters in length."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:89
+#, php-format
+#@ phoenix-framework
+msgid "The %s field cannot exceed %s characters in length."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:90
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must be exactly %s characters in length."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:91
+#, php-format
+#@ phoenix-framework
+msgid "The %s field may only contain alphabetical characters."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:92
+#, php-format
+#@ phoenix-framework
+msgid "The %s field may only contain alpha-numeric characters."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:93
+#, php-format
+#@ phoenix-framework
+msgid "The %s field may only contain alpha-numeric characters and spaces."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:94
+#, php-format
+#@ phoenix-framework
+msgid "The %s field may only contain alpha-numeric characters, underscores, and dashes."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:95
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain only numbers."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:96
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain only numeric characters."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:97
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain an integer."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:98
+#, php-format
+#@ phoenix-framework
+msgid "The %s field is not in the correct format."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:99
+#, php-format
+#@ phoenix-framework
+msgid "The %s field does not match the %s field."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:100
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must differ from the %s field."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:101
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a unique value."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:102
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must only contain digits."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:103
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must only contain digits and must be greater than zero."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:104
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a decimal number."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:105
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a number less than %s."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:106
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a number less than or equal to %s."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:107
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a number greater than %s."
+msgstr ""
+
+#: form/class-phoenix-framework-form-validation.php:108
+#, php-format
+#@ phoenix-framework
+msgid "The %s field must contain a number greater than or equal to %s."
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: phoenix.php:0
+#@ phoenix-framework
+msgid "Phoenix Framework"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: phoenix.php:0
+#@ phoenix-framework
+msgid "http://vahidd.com/phoenix"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: phoenix.php:0
+#@ phoenix-framework
+msgid "Wordpress Framework"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: phoenix.php:0
+#@ phoenix-framework
+msgid "Vahidd"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: phoenix.php:0
+#@ phoenix-framework
+msgid "http://vahidd.com"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: phoenix.php:0
+#@ phoenix-framework
+msgid "1.0"
+msgstr ""
+
+#: views/panel/panel-template.php:42
+#@ default
+msgid "Save Changes"
+msgstr ""
+
+#: views/panel/panel-template.php:43
+#@ default
+msgid "Reset Settings"
+msgstr ""
+
