@@ -83,10 +83,6 @@
 		}
 
 
-		function query_builder() {
-			return new Phoenix_Framework_DB_Query_Builder();
-		}
-
 		public function loadAssets( $load = null ) {
 			if ( $load === null ) {
 				return $this->settings[ 'loadAssets' ];
