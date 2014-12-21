@@ -22,10 +22,15 @@
 			private $_tabs = array();
 
 			private $_fieldTypes = array(
-				'text'        => 'Phoenix_Framework_Text_Field_Type',
-				'wp_editor'   => 'Phoenix_Framework_WP_Editor_Field_Type',
-				'multiselect' => 'Phoenix_Framework_Multiselect_Field_Type',
-				'media'       => 'Phoenix_Framework_Media_Field_Type'
+				'text'          => 'Phoenix_Framework_Text_Field_Type',
+				'textarea'      => 'Phoenix_Framework_Textarea_Field_Type',
+				'select'        => 'Phoenix_Framework_Select_Field_Type',
+				'radio'         => 'Phoenix_Framework_Radio_Field_Type',
+				'checkbox'      => 'Phoenix_Framework_Checkbox_Field_Type',
+				'multicheckbox' => 'Phoenix_Framework_Multicheckbox_Field_Type',
+				'wp_editor'     => 'Phoenix_Framework_WP_Editor_Field_Type',
+				'multiselect'   => 'Phoenix_Framework_Multiselect_Field_Type',
+				'media'         => 'Phoenix_Framework_Media_Field_Type'
 			);
 
 			public function __construct( $config = array() ) {
@@ -100,11 +105,20 @@
 
 			public function open_tab( $id, $label ) {
 				$this->_tabs[ $id ] = $label;
+				$this->_fields[ ]   = array(
+					'type' => 'tab',
+					'name' => $label,
+					'id'   => $id
+				);
 
 				return '<div class="form-tab" data-id="' . $id . '">';
 			}
 
 			public function close_tab() {
+				$this->_fields[ ] = array(
+					'type' => 'close_tab'
+				);
+
 				return '</div>';
 			}
 
@@ -125,7 +139,7 @@
 				return $object;
 			}
 
-			public function add_text( $id, $callback = null, Array $extra = array() ) {
+			public function add_text( $id, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
@@ -143,8 +157,26 @@
 				);
 			}
 
+			public function add_textarea( $id, Array $extra = array(), $callback = null ) {
+				if ( ! is_callable( $callback ) ) {
+					$callback = null;
+				}
 
-			public function add_wp_editor( $id, $callback = null, Array $extra = array() ) {
+				return $this->addField(
+					'textarea',
+					array(
+						'inputName'           => $this->field_name( $id ),
+						'callback'            => $callback,
+						'formBuilderSettings' => $this->settings,
+						'extra'               => $extra,
+						'id'                  => $id,
+						'valueHandler'        => array( $this, 'valueHandler' )
+					)
+				);
+			}
+
+
+			public function add_wp_editor( $id, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
@@ -165,12 +197,12 @@
 			/**
 			 * @param       $id
 			 * @param array $options
-			 * @param null  $callback
 			 * @param array $extra
+			 * @param null  $callback
 			 *
 			 * @return bool|Phoenix_Framework_Multiselect_Field_Type
 			 */
-			public function add_multiselect( $id, array $options, $callback = null, Array $extra = array() ) {
+			public function add_multiselect( $id, array $options, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
@@ -189,7 +221,7 @@
 				);
 			}
 
-			public function add_media( $id, $callback = null, Array $extra = array() ) {
+			public function add_media( $id, Array $extra = array(), $callback = null ) {
 				global $wp_version;
 				if ( version_compare( '3.5', $wp_version, '>' ) ) {
 					throw new Exception( 'Wordpress 3.5+ is required for media field.' );
@@ -213,12 +245,14 @@
 
 			}
 
-			public function add_textarea( $id, $callback = null, Array $extra = array() ) {
+
+			public function add_checkbox( $id, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
 
-				return new Phoenix_Framework_Textarea_Field_Type(
+				return $this->addField(
+					'checkbox',
 					array(
 						'inputName'           => $this->field_name( $id ),
 						'callback'            => $callback,
@@ -230,29 +264,13 @@
 				);
 			}
 
-			public function add_checkbox( $id, $callback = null, Array $extra = array() ) {
+			public function add_multicheckbox( $id, $options, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
 
-				return new Phoenix_Framework_Checkbox_Field_Type(
-					array(
-						'inputName'           => $this->field_name( $id ),
-						'callback'            => $callback,
-						'extra'               => $extra,
-						'formBuilderSettings' => $this->settings,
-						'id'                  => $id,
-						'valueHandler'        => array( $this, 'valueHandler' )
-					)
-				);
-			}
-
-			public function add_multicheckbox( $id, $options, $callback = null, Array $extra = array() ) {
-				if ( ! is_callable( $callback ) ) {
-					$callback = null;
-				}
-
-				return new Phoenix_Framework_Multicheckbox_Field_Type(
+				return $this->add_multicheckbox(
+					'multicheckbox',
 					array(
 						'inputName'           => $this->field_name( $id ),
 						'callback'            => $callback,
@@ -265,12 +283,13 @@
 				);
 			}
 
-			public function add_select( $id, $options, $callback = null, Array $extra = array() ) {
+			public function add_select( $id, $options, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
 
-				return new Phoenix_Framework_Select_Field_Type(
+				return $this->addField(
+					'select',
 					array(
 						'inputName'           => $this->field_name( $id ),
 						'callback'            => $callback,
@@ -283,12 +302,13 @@
 				);
 			}
 
-			public function add_radio( $id, $options, $callback = null, Array $extra = array() ) {
+			public function add_radio( $id, $options, Array $extra = array(), $callback = null ) {
 				if ( ! is_callable( $callback ) ) {
 					$callback = null;
 				}
 
-				return new Phoenix_Framework_Radio_Field_Type(
+				return $this->addField(
+					'radio',
 					array(
 						'inputName'           => $this->field_name( $id ),
 						'callback'            => $callback,

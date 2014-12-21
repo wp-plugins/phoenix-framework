@@ -16,7 +16,6 @@
 	if ( ! class_exists( 'Phoenix_Framework_Panel' ) ) {
 		class Phoenix_Framework_Panel {
 
-
 			private
 				$_callback,
 				$_id,
@@ -37,19 +36,21 @@
 						'field_name_generator' => array( $this, 'field_name_generator' )
 					)
 				);
-
-
-				$this->form_builder->set_values( get_option( $this->_id, array() ) );
-
+				$this->form_builder->set_values( get_option( $this->get_option_name(), array() ) );
 				$this->_callback = $callback;
-
-
 				if ( ! is_array( $this->menu ) ) {
 					$this->menu = $menu;
 				}
 				$this->menu[ 'callback' ] = array( $this, 'display' );
 				Phoenix_Framework_Admin_Menu::add( $this->menu, array( __CLASS__, 'loadPhoenixAssets' ) );
 
+				global $pagenow;
+				if ( $pagenow === 'customize.php' || ( $pagenow == 'admin-ajax.php' && ! empty( $_REQUEST[ 'action' ] ) && $_REQUEST[ 'action' ] == 'customize_save' ) ) {
+					ob_start();
+					call_user_func( $this->_callback, $this );
+					$this->_fields = ob_get_clean();
+					Phoenix_Framework_Panel_Customize_Support::make( $this );
+				}
 
 			}
 
@@ -92,6 +93,7 @@
 			function get_option_name() {
 				return $this->_id;
 			}
+
 
 		}
 	}

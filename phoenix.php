@@ -15,7 +15,7 @@
 	 * Description: Wordpress Framework
 	 * Author:      Vahidd
 	 * Author URI:  http://vahidd.com
-	 * Version:     1.0
+	 * Version:     1.1
 	 * Text Domain: phoenix
 	 * Domain Path: /languages/
 	 */
@@ -82,6 +82,10 @@
 			);
 		}
 
+
+		function query_builder() {
+			return new Phoenix_Framework_DB_Query_Builder();
+		}
 
 		public function loadAssets( $load = null ) {
 			if ( $load === null ) {

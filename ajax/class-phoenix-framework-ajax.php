@@ -1,14 +1,15 @@
 <?php
-	/**
-	 * @class          Phoenix_Framework_AJAX
-	 * @version        1.0
-	 * @package        Phoenix Framework
-	 * @category       Class
-	 * @author         Vahidd
-	 */
+/**
+ * @class          Phoenix_Framework_AJAX
+ * @version        1.0
+ * @package        Phoenix Framework
+ * @category       Class
+ * @author         Vahidd
+ */
 
-	defined( 'ABSPATH' ) or die; // Prevents direct access
+defined( 'ABSPATH' ) or die; // Prevents direct access
 
+if ( ! class_exists( 'Phoenix_Framework_AJAX' ) ) {
 	class Phoenix_Framework_AJAX extends Phoenix_Framework_AJAX_Helper {
 
 		protected static
@@ -77,11 +78,6 @@
 			);
 		}
 
-		/**
-		 * @param $action
-		 *
-		 * @return null
-		 */
 		protected function _handle_before( $action ) {
 			$is_logged_in  = is_user_logged_in();
 			$before_action = $action[ 'before' ];
@@ -91,7 +87,7 @@
 
 			$call = call_user_func( $action[ 'before' ][ 'callback' ], $this->_current_action );
 
-			if ( $call !== null ) {
+			if ( ! empty( $call ) ) {
 				$this::json_die( $call );
 			}
 
@@ -119,7 +115,6 @@
 			}
 
 			$call = ! empty( $action[ 'on' ] ) ? call_user_func( $action[ 'on' ][ 'callback' ], $this->_current_action ) : null;
-
 
 			if ( ! empty( $action[ 'after' ] ) ) {
 				$this->_handle_after( $action );
@@ -157,9 +152,6 @@
 			return $this;
 		}
 
-		/**
-		 *
-		 */
 		public function ajax_callback() {
 
 			if ( empty( $_REQUEST[ 'action2' ] ) || ! is_string( $_REQUEST[ 'action2' ] ) ) {
@@ -189,3 +181,4 @@
 		}
 
 	}
+}
