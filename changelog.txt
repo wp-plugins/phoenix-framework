@@ -1,0 +1,10 @@
+Version 1.1.1
+	Added “Phoenix_Framework_Singleton” class
+
+
+Version 1.1
+	Bugs Fixed
+
+
+Version 1
+	Initial commit

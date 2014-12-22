@@ -15,7 +15,7 @@
 	 * Description: Wordpress Framework
 	 * Author:      Vahidd
 	 * Author URI:  http://vahidd.com
-	 * Version:     1.1
+	 * Version:     1.1.1
 	 * Text Domain: phoenix
 	 * Domain Path: /languages/
 	 */
@@ -34,7 +34,7 @@
 	final class Phoenix_Framework {
 
 		public static
-			$version = '1.0',
+			$version = '1.1.1',
 			$phoenixURI = '';
 
 		protected

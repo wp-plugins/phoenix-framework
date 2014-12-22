@@ -14,6 +14,8 @@
        'Phoenix_Framework_Redirect'                 => 'classes/class-phoenix-framework-redirect.php',
        'Phoenix_Framework_Request'                  => 'classes/class-phoenix-framework-request.php',
        'Phoenix_Framework_Session'                  => 'classes/class-phoenix-framework-session.php',
+       'Phoenix_Framework_Singleton'                => 'classes/class-phoenix-framework-singleton.php',
+       'Phoenix_Framework_Taxonomy_Meta'            => 'classes/class-phoenix-framework-taxonomy-meta.php',
        'Phoenix_Framework_Widget'                   => 'classes/class-phoenix-framework-widget.php',
        'Phoenix_Framework_Flourish_Core'            => 'classes/flourish/class-phoenix-framework-flourish-core.php',
        'Phoenix_Framework_Flourish_Cryptography'    => 'classes/flourish/class-phoenix-framework-flourish-cyptography.php',
@@ -49,6 +51,5 @@
        'WP_Session'                                 => 'librearies/wp-session-manager/class-wp-session.php',
        'Phoenix_Framework_Panel_Customize_Support'  => 'panel/class-phoenix-framework-panel-customize-support.php',
        'Phoenix_Framework_Panel_Factory'            => 'panel/class-phoenix-framework-panel-factory.php',
-       'Phoenix_Framework_Panel'                    => 'panel/class-phoenix-framework-panel.php',
-       'Phoenix_Framework_Taxonomy_Meta'            => 'taxonomy-meta/class-phoenix-framework-taxonomy-meta.php'
+       'Phoenix_Framework_Panel'                    => 'panel/class-phoenix-framework-panel.php'
    );
